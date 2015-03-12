@@ -36,7 +36,6 @@ RUN echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 ONBUILD USER $APP_USER
 
 # Install ruby specified in .ruby-version
-ONBUILD COPY .ruby-version ${APP_PATH}/
 ONBUILD WORKDIR $APP_PATH
 ONBUILD ENV CONFIGURE_OPTS --disable-install-doc
 ONBUILD RUN rbenv install; rbenv init -
